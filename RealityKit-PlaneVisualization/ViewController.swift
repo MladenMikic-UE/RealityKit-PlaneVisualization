@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         let config = ARWorldTrackingConfiguration()
         
         // Enable vertical plane detection.
-        config.planeDetection = [.vertical]
+        config.planeDetection = [.vertical, .horizontal]
         config.environmentTexturing = .automatic
         arView.session.run(config)
     }
