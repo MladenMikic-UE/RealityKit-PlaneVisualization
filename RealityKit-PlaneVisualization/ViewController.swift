@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ARKit
 import RealityKit
 
 class ViewController: UIViewController {
@@ -15,11 +16,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        arView.session.delegate = self
+        configureARView()
+    }
+    
+    func configureARView() {
+        arView.automaticallyConfigureSession = false
+        let config = ARWorldTrackingConfiguration()
         
-        // Load the "Box" scene from the "Experience" Reality File
-        let boxAnchor = try! Experience.loadBox()
-        
-        // Add the box anchor to the scene
-        arView.scene.anchors.append(boxAnchor)
+        // Enable vertical plane detection.
+        config.planeDetection = [.vertical]
+        config.environmentTexturing = .automatic
+        arView.session.run(config)
     }
 }
