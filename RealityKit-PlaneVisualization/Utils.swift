@@ -32,6 +32,29 @@ func addPlaneEntity(with anchor: ARPlaneAnchor, to view: ARView) {
     view.scene.addAnchor(planeAnchorEntity)
 }
 
+func addPlaneEntity(with anchor: ARImageAnchor, to view: ARView) {
+    /*
+    let planeAnchorEntity = AnchorEntity(.plane([.any],
+                                    classification: [.any],
+                                    minimumBounds: [0.5, 0.5]))
+     */
+    let planeAnchorEntity = AnchorEntity(anchor: anchor)
+    let planeModelEntity = createImageEntity(with: anchor)
+
+    // Give Entity a name for tracking.
+    planeAnchorEntity.name = anchor.identifier.uuidString + "_image_anchor"
+    planeModelEntity.name = anchor.identifier.uuidString + "_image_model"
+    
+    // Add ModelEntity as a child of AnchorEntity.
+    // AnchorEntity handles `position` of the plane.
+    // ModelEntity handles the `skin` of the plane.
+    planeAnchorEntity.addChild(planeModelEntity)
+    
+    // Finally, add the entity to scene.
+    view.scene.addAnchor(planeAnchorEntity)
+       
+}
+
 func createPlaneModelEntity(with anchor: ARPlaneAnchor) -> ModelEntity {
     var planeMesh: MeshResource
     var color: UIColor
@@ -51,13 +74,27 @@ func createPlaneModelEntity(with anchor: ARPlaneAnchor) -> ModelEntity {
     return ModelEntity(mesh: planeMesh, materials: [SimpleMaterial(color: color, roughness: 0.25, isMetallic: false)])
 }
 
+func createImageEntity(with anchor: ARImageAnchor) -> ModelEntity {
+    let imageSize = anchor.referenceImage.physicalSize
+    var planeMesh: MeshResource = .generatePlane(width: Float(imageSize.width), depth: Float(imageSize.height))
+    let color: UIColor = UIColor.green.withAlphaComponent(0.5)
+    return ModelEntity(mesh: planeMesh, materials: [SimpleMaterial(color: color, roughness: 0.25, isMetallic: false)])
+}
+
 func removePlaneEntity(with anchor: ARPlaneAnchor, from arView: ARView) {
     guard let planeAnchorEntity = arView.scene.findEntity(named: anchor.identifier.uuidString+"_anchor") else { return }
     arView.scene.removeAnchor(planeAnchorEntity as! AnchorEntity)
 }
 
+func removeImageEntity(with anchor: ARImageAnchor, from arView: ARView) {
+    guard let planeAnchorEntity = arView.scene.findEntity(named: anchor.identifier.uuidString+"_image_anchor") else { return }
+    arView.scene.removeAnchor(planeAnchorEntity as! AnchorEntity)
+}
+
 func updatePlaneEntity(with anchor: ARPlaneAnchor, in view: ARView) {
+
     var planeMesh: MeshResource
+
     guard let entity = view.scene.findEntity(named: anchor.identifier.uuidString+"_model") else { return }
     let modelEntity = entity as! ModelEntity
 
@@ -68,6 +105,16 @@ func updatePlaneEntity(with anchor: ARPlaneAnchor, in view: ARView) {
     } else {
         fatalError("Anchor is not ARPlaneAnchor")
     }
+    
+    modelEntity.model!.mesh = planeMesh
+}
+
+func updateImageEntity(with anchor: ARImageAnchor, in view: ARView) {
+
+    guard let entity = view.scene.findEntity(named: anchor.identifier.uuidString+"_image_model") else { return }
+    let modelEntity = entity as! ModelEntity
+    let imageSize = anchor.referenceImage.physicalSize
+    var planeMesh: MeshResource = .generatePlane(width: Float(imageSize.width), depth: Float(imageSize.height))
     
     modelEntity.model!.mesh = planeMesh
 }

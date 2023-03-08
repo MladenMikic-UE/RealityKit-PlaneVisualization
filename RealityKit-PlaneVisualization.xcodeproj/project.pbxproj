@@ -9,25 +9,26 @@
 /* Begin PBXBuildFile section */
 		B4ABD16D251699FE00335C7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABD16C251699FE00335C7F /* AppDelegate.swift */; };
 		B4ABD16F251699FE00335C7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABD16E251699FE00335C7F /* ViewController.swift */; };
-		B4ABD171251699FE00335C7F /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = B4ABD170251699FE00335C7F /* Experience.rcproject */; };
 		B4ABD174251699FE00335C7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4ABD172251699FE00335C7F /* Main.storyboard */; };
 		B4ABD17625169A0000335C7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4ABD17525169A0000335C7F /* Assets.xcassets */; };
 		B4ABD17925169A0000335C7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4ABD17725169A0000335C7F /* LaunchScreen.storyboard */; };
 		B4ABD18125169BF000335C7F /* ViewController+ARSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABD18025169BF000335C7F /* ViewController+ARSessionDelegate.swift */; };
 		B4ABD18325169DF900335C7F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABD18225169DF900335C7F /* Utils.swift */; };
+		F67FBBF329B75134006750A5 /* Bathroom_Door_Frame.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F67FBBF229B75134006750A5 /* Bathroom_Door_Frame.usdz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B4ABD169251699FE00335C7F /* RealityKit-PlaneVisualization.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RealityKit-PlaneVisualization.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4ABD16C251699FE00335C7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4ABD16E251699FE00335C7F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B4ABD170251699FE00335C7F /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		B4ABD173251699FE00335C7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B4ABD17525169A0000335C7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4ABD17825169A0000335C7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4ABD17A25169A0000335C7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4ABD18025169BF000335C7F /* ViewController+ARSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ARSessionDelegate.swift"; sourceTree = "<group>"; };
 		B4ABD18225169DF900335C7F /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		F629B85929B718B400A92B05 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F67FBBF229B75134006750A5 /* Bathroom_Door_Frame.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Bathroom_Door_Frame.usdz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +61,12 @@
 		B4ABD16B251699FE00335C7F /* RealityKit-PlaneVisualization */ = {
 			isa = PBXGroup;
 			children = (
+				F629B85929B718B400A92B05 /* README.md */,
 				B4ABD16C251699FE00335C7F /* AppDelegate.swift */,
 				B4ABD16E251699FE00335C7F /* ViewController.swift */,
 				B4ABD18025169BF000335C7F /* ViewController+ARSessionDelegate.swift */,
 				B4ABD18225169DF900335C7F /* Utils.swift */,
-				B4ABD170251699FE00335C7F /* Experience.rcproject */,
+				F67FBBF229B75134006750A5 /* Bathroom_Door_Frame.usdz */,
 				B4ABD172251699FE00335C7F /* Main.storyboard */,
 				B4ABD17525169A0000335C7F /* Assets.xcassets */,
 				B4ABD17725169A0000335C7F /* LaunchScreen.storyboard */,
@@ -132,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4ABD17925169A0000335C7F /* LaunchScreen.storyboard in Resources */,
+				F67FBBF329B75134006750A5 /* Bathroom_Door_Frame.usdz in Resources */,
 				B4ABD17625169A0000335C7F /* Assets.xcassets in Resources */,
 				B4ABD174251699FE00335C7F /* Main.storyboard in Resources */,
 			);
@@ -148,7 +151,6 @@
 				B4ABD16F251699FE00335C7F /* ViewController.swift in Sources */,
 				B4ABD18125169BF000335C7F /* ViewController+ARSessionDelegate.swift in Sources */,
 				B4ABD16D251699FE00335C7F /* AppDelegate.swift in Sources */,
-				B4ABD171251699FE00335C7F /* Experience.rcproject in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +297,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4574F346W6;
 				INFOPLIST_FILE = "RealityKit-PlaneVisualization/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -313,6 +316,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4574F346W6;
 				INFOPLIST_FILE = "RealityKit-PlaneVisualization/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
